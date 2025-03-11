@@ -1,0 +1,33 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">  
+</head>
+<body>
+
+    <div >
+        <h2>login</h2>
+
+        {% if messages %}
+            {% for message in messages %}
+                <p class="error">{{ message }}</p>
+            {% endfor %}
+        {% endif %}
+
+        <form method="POST">
+            {% csrf_token %}
+            <input type="text" name="username" placeholder="user name" required>
+            <input type="password" name="password" placeholder="password" required>
+
+            
+            <button type="submit" class="login-btn">login</button>
+        </form>
+    </div>
+
+</body>
+</html>
