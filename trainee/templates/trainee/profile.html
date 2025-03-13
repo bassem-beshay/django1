@@ -8,9 +8,8 @@
 </head>
 <body>
     <div class="container mt-5">
-        <h2>Courses</h2>
-        <a href='sign_up' class="btn btn-secondary btn-sm">sign up</a>
-         <a href='login'class="btn btn-secondary btn-sm">sign in</a>
+        <h2>hi {{ train.username_field }}</h2>
+        
         
         <table class="table table-striped">
             <thead class="thead-dark">
@@ -22,13 +21,13 @@
                 </tr>
             </thead>
             <tbody>
-                {% for cource in cour %}
+               
                 <tr>
                      
-                    <td>{{ cource.id }}</td>
-                    <td>{{ cource.cource_name }}</td>
-                    <td>   {% if cource.img %}
-                        <img src="/media/{{cource.img}}" width="100px">
+                    <td>{{ cour.id }}</td>
+                    <td>{{ cour.cource_name }}</td>
+                    <td>   {% if cour.img %}
+                        <img src="/media/{{cour.img}}" width="100px">
                     {% else %}
                         <p>No Image</p>
                     {% endif %} </td>
@@ -38,11 +37,8 @@
                    
                 </tr>
                 
-                {% empty %}
-                <tr>
-                    <td colspan="3" class="text-center">No courses available</td>
-                </tr>
-                {% endfor %}
+                
+             
             </tbody>
         </table>
     </div>
