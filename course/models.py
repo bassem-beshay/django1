@@ -9,18 +9,22 @@ from django.db import models
 
 
 
+
 class Cources(models.Model):
     cource_name = models.CharField(max_length=50)
     active = models.CharField(max_length=10)
-    img = models.ImageField(upload_to='course_images/', null=True, blank=True)
+    img = models.ImageField(upload_to='course_images' , null=True , blank=True)
     id = models.BigAutoField(primary_key=True)
 
     class Meta:
-        
+      
         db_table = 'cources'
 
-    def __str__(self):
-        return self.cource_name
+
+
+    
+
+
 
 
 
